@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const nodemailer = require("nodemailer");
 const flash = require('connect-flash');
 const session = require('express-session');
-// const { MongoClient } = require('mongodb');
 
 
 const contact_uri = "mongodb+srv://aman_khan0_o:2210@user-cart.uzqba.mongodb.net/ContactData?retryWrites=true&w=majority";
@@ -154,7 +153,17 @@ app.post('/payment', (req, res) => {
 });
 
 app.post('/add', (req, res) => {
-    itemList[req.body.item] = req.body.price;
+    let flag = true;
+    for (let item in itemList) {
+        if (item == req.body.item) {
+            flag = false;
+            let count = +itemList[req.body.item].split("*")[1] + 1;
+            itemList[req.body.item] = `${req.body.price} * ${count}`;
+        }
+    }
+    if (flag) {
+        itemList[req.body.item] = req.body.price + " * 1";
+    }
     totalBill += +req.body.price;
 
     res.redirect(req.rawHeaders[31].slice(req.rawHeaders[31].lastIndexOf("/")));
@@ -192,3 +201,7 @@ app.get('/construction', (req, res) => {
 app.listen(port, () => {
     console.log(`Server started at port ${port}`);
 });
+
+
+
+// Updates

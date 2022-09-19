@@ -17,7 +17,6 @@ head
   link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
 
   //-Internal JavaScript
-  script(src='/static/javascript/item_cart.js' defer='')
 
   //-Internal CSS
   link(rel='stylesheet' href='../static/css/fruits.css')
@@ -32,24 +31,23 @@ body
           span(aria-hidden='true') &times;
       #cart-modal-body.modal-body
         p.first Buy All Items in the Cart?
-        p.second Buy All Items in the Cart?
       .modal-footer
         button.btn.btn-secondary(type='button' data-dismiss='modal') Close
         button.btn.btn-primary(type='button')
           a(href='/payment' style='text-decoration: none;color:black') Buy
 
-#cartModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='cartModalLabel' aria-hidden='true')
-  .modal-dialog(role='document')
-    .modal-content
-      .modal-header
-        h5#item-modal-title.modal-title Item Added to Cart.
-        button.close(type='button' data-dismiss='modal' aria-label='Close')
-          span(aria-hidden='true') &times;
-      #item-modal-body.modal-body
-        | Item successfully added to cart!
-        | Please continue your shopping.
-      .modal-footer
-        button.btn.btn-secondary(type='button' data-dismiss='modal') Close
+//- #cartModal.modal.fade(tabindex='-1' role='dialog' aria-labelledby='cartModalLabel' aria-hidden='true')
+//-   .modal-dialog(role='document')
+//-     .modal-content
+//-       .modal-header
+//-         h5#item-modal-title.modal-title Item Added to Cart.
+//-         button.close(type='button' data-dismiss='modal' aria-label='Close')
+//-           span(aria-hidden='true') &times;
+//-       #item-modal-body.modal-body
+//-         | Item successfully added to cart!
+//-         | Please continue your shopping.
+//-       .modal-footer
+//-         button.btn.btn-secondary(type='button' data-dismiss='modal') Close
 
 nav#navbar
 
@@ -93,7 +91,7 @@ section#order-content
       form.btn-container(action='/add' method='post')
         input.hidden(name='item' value='apple')
         input.hidden(name='price' value='80')
-        button#apple.btn.item-btn.btn-outline-danger(value='80' data-toggle='modal' data-target='#cartModal')
+        button#apple.btn.item-btn.btn-outline-danger(value='80' data-toggle='modal' )
           | Add to
           | Cart
     .box
@@ -113,7 +111,7 @@ section#order-content
       form.btn-container(action='/add' method='post')
         input.hidden(name='item' value='banana')
         input.hidden(name='price' value='30')
-        button#banana.btn.item-btn.btn-outline-danger(type='submit' value='30' data-toggle='modal' data-target='#cartModal')
+        button#banana.btn.item-btn.btn-outline-danger(type='submit' value='30' data-toggle='modal' )
           | Add to
           | Cart
     .box
@@ -133,7 +131,7 @@ section#order-content
       form.btn-container(action='/add' method='post')
         input.hidden(name='item' value='guava')
         input.hidden(name='price' value='60')
-        button#guava.btn.item-btn.btn-outline-danger(value='60' data-toggle='modal' data-target='#cartModal')
+        button#guava.btn.item-btn.btn-outline-danger(value='60' data-toggle='modal' )
           | Add to
           | Cart
     .box
@@ -154,7 +152,7 @@ section#order-content
       form.btn-container(action='/add' method='post')
         input.hidden(name='item' value='mango')
         input.hidden(name='price' value='200')
-        button#mango.btn.item-btn.btn-outline-danger(value='200' data-toggle='modal' data-target='#cartModal')
+        button#mango.btn.item-btn.btn-outline-danger(value='200' data-toggle='modal' )
           | Add to
           | Cart
     .box
@@ -174,7 +172,7 @@ section#order-content
       form.btn-container(action='/add' method='post')
         input.hidden(name='item' value='orange')
         input.hidden(name='price' value='160')
-        button#orange.btn.item-btn.btn-outline-danger(value='160' data-toggle='modal' data-target='#cartModal')
+        button#orange.btn.item-btn.btn-outline-danger(value='160' data-toggle='modal' )
           | Add to
           | Cart
     .box
@@ -195,7 +193,7 @@ section#order-content
       form.btn-container(action='/add' method='post')
         input.hidden(name='item' value='pineapple')
         input.hidden(name='price' value='60')
-        button#pineapple.btn.item-btn.btn-outline-danger(value='60' data-toggle='modal' data-target='#cartModal')
+        button#pineapple.btn.item-btn.btn-outline-danger(value='60' data-toggle='modal' )
           | Add to
           | Cart
     .box
@@ -216,7 +214,7 @@ section#order-content
       form.btn-container(action='/add' method='post')
         input.hidden(name='item' value='pomegranate')
         input.hidden(name='price' value='140')
-        button#pomegranate.btn.item-btn.btn-outline-danger(value='140' data-toggle='modal' data-target='#cartModal')
+        button#pomegranate.btn.item-btn.btn-outline-danger(value='140' data-toggle='modal' )
           | Add to
           | Cart
     .box
@@ -236,7 +234,7 @@ section#order-content
       form.btn-container(action='/add' method='post')
         input.hidden(name='item' value='strawberry')
         input.hidden(name='price' value='60')
-        button#strawberry.btn.item-btn.btn-outline-danger(value='60' data-toggle='modal' data-target='#cartModal')
+        button#strawberry.btn.item-btn.btn-outline-danger(value='60' data-toggle='modal' )
           | Add to
           | Cart
     .box
@@ -256,7 +254,7 @@ section#order-content
       form.btn-container(action='/add' method='post')
         input.hidden(name='item' value='watermelon')
         input.hidden(name='price' value='60')
-        button#watermelon.btn.item-btn.btn-outline-danger(value='60' data-toggle='modal' data-target='#cartModal')
+        button#watermelon.btn.item-btn.btn-outline-danger(value='60' data-toggle='modal' )
           | Add to
           | Cart
 
