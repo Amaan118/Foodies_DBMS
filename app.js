@@ -165,8 +165,8 @@ app.post('/add', (req, res) => {
         itemList[req.body.item] = req.body.price + " * 1";
     }
     totalBill += +req.body.price;
-
-    res.redirect(req.rawHeaders[31].slice(req.rawHeaders[31].lastIndexOf("/")));
+    console.log(req)
+    res.redirect(req.rawHeaders[31].slice(req.rawHeaders[31].lastIndexOf("/"),));
 });
 
 app.post('/contact', (req, res) => {
